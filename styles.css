@@ -1,0 +1,133 @@
+*,
+*::before,
+*::after {
+        box-sizing: border-box;
+}
+
+* {
+        margin: 0;
+}
+
+html,
+body {
+        height: 100%;
+}
+
+body {
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+        display: block;
+        max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+        font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+        overflow-wrap: break-word;
+}
+
+body {
+        background-color: #007200;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 0;
+        gap: 5rem;
+        align-items: center;
+        /* min-height: 100vh;
+       /*The min-height: 100vh makes the elements in the body center in the middle vertically.
+        I don't also know why it is like this, but i'll try to get more insight on this*/
+}
+
+header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        max-width: 200px;
+}
+
+.placeholder_img {
+        width: 100%;
+        object-fit: cover;
+}
+
+main {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: min(200px, 40%);
+        max-width: 200px;
+}
+
+span {
+        position: absolute;
+        /*The position: absolute makes the span expanded to its parent container that has a position
+         specified (other than static) */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 38% 62% 64% 36% / 43% 35% 65% 57%;
+        border: 2px solid #f1faee;
+        animation: animate 2s linear infinite;
+}
+
+span:nth-child(1) {
+        animation-direction: reverse;
+        border-radius: 41% 59% 40% 60% / 65% 66% 34% 35%;
+}
+
+span:nth-child(2) {
+        animation-duration: 2s;
+        border-radius: 73% 27% 56% 44% / 57% 74% 26% 43%;
+}
+
+@keyframes animate {
+        0% {
+                transform: rotate(0deg);
+        }
+
+        100% {
+                transform: rotate(360deg);
+        }
+
+}
+
+/* @media (max-width: 400px){
+        main{
+            width: 100px;
+        }
+    } */
+
+
+/*All important comments on what may be strange
+    
+    Check on the min-height property;
+    You've seen that an element that has been positioned on absolute takes the flow of its parent 
+    element that has a position set, if the position set on the parent container is set on static(default)
+    it will take the flow of the whole website;
+    
+    
+    
+    
+    */
